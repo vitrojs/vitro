@@ -36,7 +36,7 @@
     "src"
   ],
   "scripts": {
-    "postinstall": "pnpm dlx unbuild"
+    "postinstall": "bunx unbuild"
   },
   "keywords": [
     "ui",
