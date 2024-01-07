@@ -1,5 +1,4 @@
 import { buildSync } from 'esbuild'
-import { printDone, rmDist } from '../../scripts/build-utils.mjs'
 
 rmDist(import.meta.url)
 
@@ -14,8 +13,6 @@ buildSync({
 })
 
 printDone()
-
-
 
 import * as path from 'node:path'
 import * as fs from 'node:fs'
