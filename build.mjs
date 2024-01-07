@@ -7,7 +7,10 @@ import * as url from "node:url";
 rmDist(import.meta.url);
 
 buildSync({
-  entryPoints: ["src/index.ts"],
+  entryPoints: [
+    "src/index.ts",
+    "src/jsx/runtime.ts",
+  ],
   format: "esm",
   outdir: "dist",
   bundle: true,
