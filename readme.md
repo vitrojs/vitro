@@ -17,7 +17,7 @@
   </a>
 </p>
 
-# [Voby](https://voby.dev)
+# [Vitro](https://github.com/vitrojs/vitro) is [voby](https://voby.dev) fork that adds the [`asChild` render delegation pattern](https://medium.com/@bryanmylee/aschild-in-react-svelte-vue-and-solid-for-render-delegation-645c73650ced)
 
 A high-performance framework with fine-grained observable/signal-based reactivity for building rich applications.
 
@@ -80,6 +80,12 @@ You can find some demos and benchmarks below, more demos are contained inside th
 | [`template`](#template)               |                                   |                                      |                                             |                                                     |                                 |
 | [`tick`](#tick)                       |                                   |                                      |                                             |                                                     |                                 |
 | [`untrack`](#untrack)                 |                                   |                                      |                                             |                                                     |                                 |
+
+## Install
+
+```sh
+pnpm add github:vitrojs/vitro
+```
 
 ## Usage
 

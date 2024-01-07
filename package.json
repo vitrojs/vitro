@@ -36,8 +36,7 @@
     "src"
   ],
   "scripts": {
-    "build": "node build.mjs",
-    "postinstall": "node build.mjs"
+    "postinstall": "pnpm dlx unbuild"
   },
   "keywords": [
     "ui",
@@ -52,9 +51,6 @@
     "fine-grained",
     "updates"
   ],
-  "devDependencies": {
-    "esbuild": "latest"
-  },
   "dependencies": {
     "htm": "^3.1.1",
     "oby": "^15.0.0"
