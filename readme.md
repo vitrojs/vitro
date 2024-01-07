@@ -84,6 +84,7 @@ You can find some demos and benchmarks below, more demos are contained inside th
 ## Install
 
 ```sh
+pnpm add esbuild -D
 pnpm add github:vitrojs/vitro
 ```
 
