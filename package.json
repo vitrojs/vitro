@@ -1,0 +1,62 @@
+{
+  "name": "vitro",
+  "version": "0.57.2",
+  "description": "A high-performance framework with fine-grained observable/signal-based reactivity for building rich applications.",
+  "repository": "https://github.com/vitrojs/vitro.git",
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./src/index.ts"
+    },
+    "./jsx-runtime": {
+      "import": "./dist/jsx/runtime.js",
+      "types": "./src/jsx/runtime.ts"
+    },
+    "./jsx-dev-runtime": {
+      "import": "./dist/jsx/runtime.js",
+      "types": "./src/jsx/runtime.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "jsx-runtime": [
+        "./src/jsx/runtime.ts"
+      ],
+      "jsx-dev-runtime": [
+        "./src/jsx/runtime.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "postinstall": "node build.mjs"
+  },
+  "keywords": [
+    "ui",
+    "framework",
+    "reactive",
+    "observable",
+    "signal",
+    "fast",
+    "performant",
+    "performance",
+    "small",
+    "fine-grained",
+    "updates"
+  ],
+  "devDependencies": {
+    "esbuild": "latest"
+  },
+  "dependencies": {
+    "htm": "^3.1.1",
+    "oby": "^15.0.0"
+  }
+}
