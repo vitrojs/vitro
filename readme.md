@@ -94,7 +94,7 @@ Add 'vitro' to package.json#trustedDependencies
 ```
 
 ```sh
-bun add github:vitrojs/vitro
+pnpm add github:vitrojs/vitro
 ```
 
 ## Usage
