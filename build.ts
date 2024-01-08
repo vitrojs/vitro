@@ -20,6 +20,7 @@ buildSync({
   format: 'esm',
   outdir: 'dist',
   bundle: true,
+  tsconfig: path.join(import.meta.dir, 'tsconfig.json'),
   splitting: true,
   platform: 'browser',
   external: Object.keys(pkg.dependencies),
