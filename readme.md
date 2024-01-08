@@ -1,7 +1,7 @@
 
 <p align="center">
-  <a href="https://voby.dev">
-    <img src="./resources/banner/svg/banner-light-rounded.svg" alt="Voby's Banner" width="640px" height="320px">
+  <a href="https://github.com/vitrojs/vitro" target="_blank" rel="noopener noreferrer">
+    <img width="180" src="https://raw.githubusercontent.com/vitrojs/vitro/main/resources/logo/svg/logo.svg"/>
   </a>
 </p>
 
