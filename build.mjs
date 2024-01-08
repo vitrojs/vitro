@@ -4,7 +4,12 @@ import * as path from "node:path";
 import * as fs from "node:fs";
 import * as url from "node:url";
 
-rmDist(import.meta.url);
+const dirname = path.dirname(url.fileURLToPath(importUrl));
+const dist = path.join(dirname, "dist");
+if (fs.existsSync(dist)) {
+  console.log(`Cleaning dist folder...`);
+  fs.rmSync(dist, { recursive: true, force: true });
+}
 
 buildSync({
   entryPoints: [
@@ -20,12 +25,3 @@ buildSync({
 });
 
 console.log("✅ Build done!");
-
-function rmDist(importUrl) {
-  const dirname = path.dirname(url.fileURLToPath(importUrl));
-  const dist = path.join(dirname, "dist");
-  if (fs.existsSync(dist)) {
-    console.log(`Cleaning dist folder...`);
-    fs.rmSync(dist, { recursive: true, force: true });
-  }
-}
