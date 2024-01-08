@@ -9,6 +9,8 @@ import * as url from 'node:url'
 const dirname = path.dirname(url.fileURLToPath(import.meta.url))
 const dist = path.join(dirname, 'dist')
 if (fs.existsSync(dist)) {
+  if (Bun.env.NODE_ENV === 'production') process.exit(0)
+
   console.log(`🧹 Cleaning dist folder...`)
   fs.rmSync(dist, { recursive: true, force: true })
 }
