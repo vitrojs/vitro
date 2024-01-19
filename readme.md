@@ -2071,7 +2071,7 @@ JSX is supported out of the box, as a rule of thumb it's very similar to how Rea
 - The "class" attribute can also accept an object of classes or an array of classes, for convenience.
 - SVGs are supported out of the box and will also be updated in a fine-grained manner.
 - The "innerHTML", "outerHTML", "textContent" and "className" props are forbidden on native elements, as they are largely just footguns or non-idiomatic.
-- A React-like "dangerouslySetInnerHTML" attribute is supported for setting some raw HTML.
+- A React-like "dangerouslySetInnerHTML" attribute is not supported, instead use "set:html".
 - Numbers set as values for style properties that require a unit to be provided will automatically be suffixed with "px".
 - Using CSS variables in the "style" object is supported out of the box.
 - The following events are delegated, automatically: `beforeinput`, `click`, `dblclick`, `focusin`, `focusout`, `input`, `keydown`, `keyup`, `mousedown`, `mouseup`.

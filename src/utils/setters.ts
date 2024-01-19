@@ -223,7 +223,9 @@ const setChildStatic = (
       FragmentUtils.replaceWithNode(fragment, textNode)
 
       return
-    } else if (
+    }
+
+    if (
       type === 'object' &&
       child !== null &&
       typeof (child as Node).nodeType === 'number'
@@ -686,12 +688,10 @@ const setHTMLStatic = (
 
 const setHTML = (
   element: HTMLElement,
-  value: FunctionMaybe<{
-    __html: FunctionMaybe<null | undefined | number | string>
-  }>,
+  value: FunctionMaybe<null | undefined | number | string>,
 ): void => {
   useRenderEffect(() => {
-    setHTMLStatic(element, $$($$(value).__html))
+    setHTMLStatic(element, $$(value))
   })
 }
 
@@ -893,7 +893,7 @@ const setTemplateAccessor = (
     }
 
     value(element, 'setClasses')
-  } else if (key === 'dangerouslySetInnerHTML') {
+  } else if (key === 'set:html') {
     value(element, 'setHTML')
   } else if (key.charCodeAt(0) === 111 && key.charCodeAt(1) === 110) {
     // /^on/
@@ -937,7 +937,7 @@ const setProp = (
     setStyles(element, value)
   } else if (key === 'class') {
     setClasses(element, value)
-  } else if (key === 'dangerouslySetInnerHTML') {
+  } else if (key==='set:html') {
     setHTML(element, value)
   } else if (key.charCodeAt(0) === 111 && key.charCodeAt(1) === 110) {
     // /^on/
@@ -976,15 +976,14 @@ const AS_CHILD_PROPS_EXCLUDED = [
   'id',
   'ref',
   'children',
-  'dangerouslySetInnerHTML',
 ]
 
 const setProps = (
   element: Node,
   object: Record<string, unknown>,
-  asChild = false,
+  isAsChildComponent = false,
 ): void => {
-  if (asChild) {
+  if (isAsChildComponent) {
     const child = object['children'] as Child
 
     for (const key of AS_CHILD_PROPS_EXCLUDED) {
