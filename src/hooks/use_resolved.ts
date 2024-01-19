@@ -13,6 +13,16 @@ type O<T> = T extends ObservableReadonly<infer U> ? U : T
 
 //TODO: Maybe port this to oby, as "resolved"
 
+// TODO: Simplify types
+// function resolve<
+//   T extends unknown[],
+//   R extends {
+//     [K in keyof T]: T[K] extends Observable<infer V> ? V : T[K] extends () => infer V ? V :  T[K]
+//   },
+// >(vals: [...T], fn: (...args: [...R]) => void) {
+//   //
+// }
+
 function useResolved<T1, T2, T3, T4, T5, T6, T7, T8, T9>(
   value: readonly [T1, T2, T3, T4, T5, T6, T7, T8, T9],
   resolveFunction?: true,
