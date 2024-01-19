@@ -44,7 +44,8 @@ const createElement = <P = {}>(
     return wrapElement(() => {
       return untrack(() => component.call(component, props as P)) //TSC
     })
-  } else if (isString(component)) {
+  }
+  if (isString(component)) {
     const isSVG = isSVGElement(component)
 
     const isAsChild = !isSVG && asChild
@@ -65,11 +66,13 @@ const createElement = <P = {}>(
 
       return child
     })
-  } else if (isNode(component)) {
-    return wrapElement(() => component)
-  } else {
-    throw new Error('Invalid component')
   }
+
+  if (isNode(component)) {
+    return wrapElement(() => component)
+  }
+
+  throw new Error('Invalid component')
 }
 
 /* EXPORT */
