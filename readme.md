@@ -85,6 +85,12 @@ You can find some demos and benchmarks below, more demos are contained inside th
 
 ## Install
 
+
+```sh
+# The package is temporarily published through GitHub repo, and depends on esbuild to generate the dist directory during postinstall
+pnpm add esbuild -D
+```
+
 Add 'vitro' to package.json#trustedDependencies
 
 ```json
