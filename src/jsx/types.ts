@@ -532,7 +532,7 @@ declare namespace JSX {
   interface ViewAttributes {
     asChild?: boolean
     children?: Children
-    'set:html': FunctionMaybe<Nullable<string>>
+    'set:html'?: FunctionMaybe<Nullable<string>>
   }
 
   interface DOMAttributes<T extends EventTarget> extends EventAttributes<T> {}
