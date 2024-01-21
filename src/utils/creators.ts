@@ -4,18 +4,21 @@ import type { ComponentIntrinsicElement, FN } from '../types'
 
 /* MAIN */
 
-const createComment: FN<[], Comment> = document.createComment.bind(document, '')
+const createComment: FN<[], Comment> = () => document.createComment('')
 
-const createHTMLNode: FN<[ComponentIntrinsicElement], HTMLElement> =
-  document.createElement.bind(document)
+const createHTMLNode: FN<[ComponentIntrinsicElement], HTMLElement> = (
+	element: ComponentIntrinsicElement,
+) => document.createElement(element)
 
-const createSVGNode: FN<[ComponentIntrinsicElement], Element> =
-  document.createElementNS.bind(document, 'http://www.w3.org/2000/svg')
+const createSVGNode: FN<[ComponentIntrinsicElement], Element> = (
+	element: ComponentIntrinsicElement,
+) => document.createElementNS(element, 'http://www.w3.org/2000/svg')
 
-const createText: FN<[any], Text> = document.createTextNode.bind(document)
+const createText: FN<[any], Text> = (value: any) =>
+	document.createTextNode(value)
 
-const createAsChildFragment: FN<[], DocumentFragment> =
-  document.createDocumentFragment.bind(document)
+const createAsChildFragment: FN<[], DocumentFragment> = () =>
+	document.createDocumentFragment()
 
 /* EXPORT */
 
@@ -24,5 +27,6 @@ export {
   createComment,
   createHTMLNode,
   createSVGNode,
-  createText,
+  createText
 }
+
