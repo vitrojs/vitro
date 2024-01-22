@@ -1,5 +1,6 @@
 /* IMPORT */
 
+import { get, observable } from '../oby'
 import $ from './S'
 import $$ from './SS'
 import batch from './batch'
@@ -27,6 +28,8 @@ import untrack from './untrack'
 export {
   $,
   $$,
+  observable,
+  get,
   batch,
   createContext,
   createDirective,
