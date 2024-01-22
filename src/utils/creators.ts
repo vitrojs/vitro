@@ -12,7 +12,7 @@ const createHTMLNode: FN<[ComponentIntrinsicElement], HTMLElement> = (
 
 const createSVGNode: FN<[ComponentIntrinsicElement], Element> = (
 	element: ComponentIntrinsicElement,
-) => document.createElementNS(element, 'http://www.w3.org/2000/svg')
+) => document.createElementNS('http://www.w3.org/2000/svg', element)
 
 const createText: FN<[any], Text> = (value: any) =>
 	document.createTextNode(value)
@@ -23,10 +23,9 @@ const createAsChildFragment: FN<[], DocumentFragment> = () =>
 /* EXPORT */
 
 export {
-  createAsChildFragment,
-  createComment,
-  createHTMLNode,
-  createSVGNode,
-  createText
+	createAsChildFragment,
+	createComment,
+	createHTMLNode,
+	createSVGNode,
+	createText,
 }
-
